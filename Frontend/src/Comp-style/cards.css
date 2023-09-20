@@ -1,0 +1,29 @@
+.figure{
+  height: 300px;
+  width: 600px ;
+  animation: cards 2s ease 0s 1 normal forwards;
+}
+
+
+.figure-img{
+    padding-top: 2px ;
+    padding-right: 50px;
+    padding-left: 10px;
+    height: 200px;
+    width: 500px;
+    
+  }
+  .figure span{
+    color: red;
+  }
+  @keyframes cards {
+    0% {
+      opacity: 0;
+      transform: translateY(-250px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

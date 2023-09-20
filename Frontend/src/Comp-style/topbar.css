@@ -1,0 +1,21 @@
+.topbar{
+    background: #7e1cb8;
+    color: white;
+    height: 50px;
+}
+
+.mi{
+    margin-left: auto;
+}
+.top2{
+    background: #fffbfb;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+.fs{
+    font-size: 12px;
+}
+
+

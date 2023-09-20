@@ -1,0 +1,39 @@
+.top-section{
+    height: 200px;
+    background:#7e1cb8 ;
+    color: white;
+    
+}
+
+
+.one{
+    width: 40%;
+    height: 100px;
+    background: white;
+    color:#7e1cb8;
+    margin: 0px 10px;
+    border-radius: 2px;
+    padding: 8px;
+    overflow-y: hidden;
+    
+}
+.two{
+    width: 30%;
+    height: 100px;
+    background: white;
+    color:#7e1cb8;
+    margin: 0px 10px;
+    border-radius: 2px;
+    padding: 8px;
+    overflow-y: hidden;
+    
+}
+.recharge .btn:hover{
+    color: black;
+    
+
+}
+.withdraw .btn:hover{
+    color: black;
+   
+}

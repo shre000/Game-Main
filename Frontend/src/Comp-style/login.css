@@ -1,0 +1,24 @@
+.bg-purple{
+    background: #7e1cb8 !important;
+    color: white;
+}
+
+.form-outline{
+    width: 50%;
+    margin: auto;
+    
+}
+.btn{
+   margin: auto;
+}
+.btn-purple{
+    background: #7e1cb8 !important;
+    color: white;
+}
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: white;
+}
