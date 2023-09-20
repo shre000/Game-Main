@@ -1,0 +1,21 @@
+.bonus-inner{
+    background: #7e1cb8;
+    height: 50px;
+    color: white;
+    overflow-y: hidden;
+    width: 100%;
+}
+.bonus-inner a{
+    color: white;
+    text-decoration: none;
+    
+}
+.promotion-outer{
+    height: 40px;
+    background: #7e1cb8;
+    
+}
+.promotion-outer a{
+    color: white;
+    text-decoration: none;
+}
