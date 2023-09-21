@@ -131,13 +131,6 @@ const Register = () => {
                 </div>
             
 
-              {/* <!-- Recommendation code --> */}
-              {/* onChange={setVal} value ={inpval.registerRecommendationcode}  */}
-              <div className="form-outline mb-2">
-                <label className="form-label" htmlFor="registerRecommendationcode">Recommendation Code</label>
-                <input onChange={setVal} value={inpval.registerRecommendationcode} id="registerRecommendationcode" className="form-control" name='registerRecommendationcode'placeholder='Enter your recommendation code' />
-
-              </div>
 
 
               {/* <!-- Password input --> */}
@@ -156,6 +149,13 @@ const Register = () => {
 
               </div>
 
+              {/* <!-- Recommendation code --> */}
+              {/* onChange={setVal} value ={inpval.registerRecommendationcode}  */}
+              <div className="form-outline mb-2">
+                <label className="form-label" htmlFor="registerRecommendationcode">Recommendation Code</label>
+                <input onChange={setVal} value={inpval.registerRecommendationcode} id="registerRecommendationcode" className="form-control" name='registerRecommendationcode'placeholder='Enter your recommendation code' />
+
+              </div>
               {/* <!-- Checkbox --> */}
               <div className="form-check d-flex justify-content-center mb-2">
                 <input className="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
