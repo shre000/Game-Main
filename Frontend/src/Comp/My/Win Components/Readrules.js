@@ -10,16 +10,16 @@ const Readrules = () => {
     const handleShow = () => setShow(true);
   return (
     <div>
-       <div className='text-end'>
-            <Button variant="dark" onClick={handleShow} >
-             Read rules
+       <div>
+            <Button className='btn btn-purple' onClick={handleShow} >
+             Rules
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title className='fs-5 text-center'>Rule of Guess</Modal.Title>
                 </Modal.Header>
-                <Modal.Body> Woohoo, you are reading this text in a modal!</Modal.Body>
+                <Modal.Body> Demo text..........guess a number then ....</Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
                         Close

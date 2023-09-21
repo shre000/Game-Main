@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../Comp-style/topbar2.css'
+import Bell from './Bell';
 
 const Topbar2 = () => {
   return (
@@ -18,8 +19,12 @@ const Topbar2 = () => {
 
           </div>
           <div className="two">
+            <div className='position-absolute'>
+            <Bell/>
+            </div>
             {/* <center className='my-4'><span className='recharge fs-5'>Recharge</span> &nbsp; &nbsp; <span className='withdraw fs-5'>Withdraw</span> </center>
               */}
+           
             <div className="recharge text-center ">
               <button type="button" className='btn btn-purple'> Recharge</button>
             </div>
@@ -27,7 +32,8 @@ const Topbar2 = () => {
               <button type="button" className='btn btn-purple'> <span>Withdraw</span></button>
             </div>
           </div>
-
+         
+         
 
         </div>
 

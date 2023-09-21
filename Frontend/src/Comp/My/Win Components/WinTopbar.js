@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../../Comp-style/wintopbar.css'
+import Readrules from '../../My/Win Components/Readrules'
 
 const WinTopbar = () => {
   return (
@@ -21,7 +22,8 @@ const WinTopbar = () => {
             <button type="button" className='btn btn-purple'> Recharge</button>
           </div>
           <div className="withdraw text-center mt-2 ">
-            <button type="button" className='btn btn-purple'> <span>Rules</span></button>
+            {/* <button type="button" className='btn btn-purple'> <span>Rules</span></button> */}
+            <Readrules/>
           </div>
 
         </div>

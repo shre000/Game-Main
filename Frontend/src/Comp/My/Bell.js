@@ -10,8 +10,8 @@ const Bell = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className='text-end'>
-            <Button variant="dark" onClick={handleShow} >
+        <div className=''>
+            <Button variant="warning" className='btn' onClick={handleShow} >
             <i class="fa-regular fa-bell"></i>
             </Button>
 
@@ -19,7 +19,7 @@ const Bell = () => {
                 <Modal.Header closeButton>
                     <Modal.Title className='fs-5 text-center'>Notice</Modal.Title>
                 </Modal.Header>
-                <Modal.Body> Woohoo, you are reading this text in a modal!</Modal.Body>
+                <Modal.Body> Read the instructions mentioned below carefully</Modal.Body>
                 <Modal.Footer>
                     <Button variant="warning" onClick={handleClose}>
                         Close
