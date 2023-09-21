@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../../Comp-style/wintopbar.css'
 import Readrules from '../../My/Win Components/Readrules'
+import { Link } from 'react-router-dom'
 
 const WinTopbar = () => {
   return (
@@ -19,7 +20,7 @@ const WinTopbar = () => {
           {/* <center className='my-4'><span className='recharge fs-5'>Recharge</span> &nbsp; &nbsp; <span className='withdraw fs-5'>Withdraw</span> </center>
             */}
           <div className="recharge text-center ">
-            <button type="button" className='btn btn-purple'> Recharge</button>
+            <Link to={'/recharge'}><button type="button" className='btn btn-purple'> Recharge</button></Link>
           </div>
           <div className="withdraw text-center mt-2 ">
             {/* <button type="button" className='btn btn-purple'> <span>Rules</span></button> */}
