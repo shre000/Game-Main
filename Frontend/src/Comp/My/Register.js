@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-// 
-import Footer from '../Home/Footer';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import Footer from '../Home/Footer'
+import {useNavigate} from "react-router-dom"
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +14,7 @@ const Register = () => {
     registerRepeatPassword: ""
 });
 
-
+const history = useNavigate();
 const setVal = (e) => {
     // console.log(e.target.value);
     const { name, value } = e.target;
@@ -88,9 +87,8 @@ console.log(data);
       console.log(res);
 
       if (res.status === 201) {
-          toast.success("Registration Successfully done 😃!", {
-              position: "top-center"
-          });
+        alert("Registration Successfully done 😃!");
+        history("/Login");
           setInpval({ ...inpval, registerMobilenumber: "", registerVerificationcode: "",registerRecommendationcode: "", registerPassword: "", registerRepeatPassword: "" });
       }
   }
@@ -118,14 +116,14 @@ console.log(data);
               <div className="form-outline mb-2">
               
               <label className="form-label" htmlFor="registerMobilenumber">Mobile Number</label>
-              <input onChange={setVal} value={inpval.registerMobilenumber} name="registerMobilenumber" id="registerMobilenumber" placeholder='Enter Your Mobile number' />
+              <input onChange={setVal} value={inpval.registerMobilenumber} className="form-control" name="registerMobilenumber" id="registerMobilenumber" placeholder='Enter Your Mobile number' />
               </div>
 
               {/* <!-- Verification Code --> */}
               {/*  onChange={setVal} value ={inpval.registerVerificationcode}*/}
               <div className="form-outline mb-2">
               <label className="form-label" htmlFor="registerVerificationcode">Verification code</label>
-                <input onChange={setVal} value={inpval.registerVerificationcode}  id="registerVerificationcode" name='registerVerificationcode'/>
+                <input onChange={setVal} value={inpval.registerVerificationcode} className="form-control" id="registerVerificationcode" name='registerVerificationcode'/>
                 
               </div>
 
@@ -133,7 +131,7 @@ console.log(data);
               {/* onChange={setVal} value ={inpval.registerRecommendationcode}  */}
               <div className="form-outline mb-2">
               <label className="form-label" htmlFor="registerRecommendationcode">Recommendation Code</label>
-                <input onChange={setVal} value ={inpval.registerRecommendationcode}id="registerRecommendationcode" name='registerRecommendationcode'/>
+                <input onChange={setVal} value ={inpval.registerRecommendationcode}id="registerRecommendationcode" className="form-control" name='registerRecommendationcode'/>
                
               </div>
            
@@ -142,7 +140,7 @@ console.log(data);
               {/* //onChange={setVal} value ={inpval.registerPassword} */}
               <div className="form-outline mb-2">
               <label className="form-label" htmlFor="registerPassword">Password</label>
-                <input onChange={setVal} value ={inpval.registerPassword}id="registerPassword" name='registerPassword' />
+                <input onChange={setVal} value ={inpval.registerPassword}id="registerPassword" className="form-control" name='registerPassword' />
                
               </div>
 
@@ -150,7 +148,7 @@ console.log(data);
               {/* //onChange={setVal} value ={inpval.registerRepeatPassword}  */}
               <div className="form-outline mb-2">
               <label className="form-label" htmlFor="registerRepeatPassword">Confirm password</label>
-                <input onChange={setVal} value ={inpval.registerRepeatPassword} id="registerRepeatPassword"  name='registerRepeatPassword' />
+                <input onChange={setVal} value ={inpval.registerRepeatPassword} id="registerRepeatPassword" className="form-control" name='registerRepeatPassword' />
                
               </div>
 
@@ -165,7 +163,7 @@ console.log(data);
 
               {/* <!-- Submit button --> */}
               <center> <button className="btn btn-purple  btn-block mb-5 mt-2 mx-5" onClick={addUserdata}>Sign Up</button></center>
-              <center> <Link to={'/login'}><button type="submit" className="btn btn-purple  btn-block mb-5 mt-2 mx-5">Sign Up</button></Link></center>
+              {/* <center> <Link to={'/login'}><button type="submit" className="btn btn-purple  btn-block mb-5 mt-2 mx-5">Sign Up</button></Link></center> */}
             </form>
           </div>
         </div>

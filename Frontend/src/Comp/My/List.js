@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../../Comp-style/list.css'
 import Accordion from 'react-bootstrap/Accordion';
 import { Link } from 'react-router-dom';
+import { LoginContext } from './context';
 
 const List = () => {
+    const { logindata, setLoginData } = useContext(LoginContext);
+    //console.log(logindata.ValidUserOne.registermobilenumber);
+    
+    const logoutuser = async () => {
+        let token = localStorage.getItem("usersdatatoken");
+console.log(token);
+        const res = await fetch("/logout", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token,
+                Accept: "application/json"
+            },
+            credentials: "include"
+        });
+
+        const data = await res.json();
+        console.log(data);
+
+        try {(data.status == 201) 
+            console.log("use logout");
+            localStorage.removeItem("usersdatatoken");
+            setLoginData(false)
+            history("/register");
+        } catch(error) {
+            console.log(error);
+        }
+    }
     return (
         <div>
             <div className="container py-1 mb-4">
@@ -49,7 +78,7 @@ const List = () => {
                     </Accordion>
 
                 </ul>
-                <center> <Link to={'/login'} ><button type='button' className='btn btn-purple'>Sign Out</button></Link>  </center>
+                <center> <button type='button' onClick={logoutuser} className='btn btn-purple'>Sign Out</button>  </center>
             </div>
 
 
