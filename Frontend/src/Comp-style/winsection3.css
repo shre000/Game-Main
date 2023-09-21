@@ -7,3 +7,11 @@
     background: linear-gradient(#0d6efd, #198754);
     color: white;
 }
+.split0{
+    background-image: linear-gradient(160deg, rgb(13,110, 253) 50%, rgb(227, 54, 42) 50%);
+    color: white;
+}
+.split1{
+    background-image: linear-gradient(160deg, rgb(13,110, 253) 50%, rgba(25, 135, 84, 1) 50%);
+    color: white;
+}

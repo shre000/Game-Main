@@ -38,16 +38,16 @@ const WinSection3 = () => {
                 </div>
                 <hr />
                 <Row className='text-lg-center text-md-start text-sm-start text-xs-start'>
-                    <Col><span className='btn color-btn' >0</span></Col>
-                    <Col><span className='btn btn-primary'>1</span></Col>
+                    <Col><span> <button data-v-3acbc54d="" className="btn split0" data-num="0">0</button></span></Col>
+                    <Col><span className='btn btn-success'>1</span></Col>
                     <Col><span className='btn btn-danger '>2</span></Col>
                     <Col><span className='btn btn-success '>3</span></Col>
-                    <Col><span className='btn btn-primary '>4</span></Col>
-                    <Col><span className='btn  color-btn2 '>5</span></Col>
-                    <Col><span className='btn btn-primary '>6</span></Col>
-                    <Col><span className='btn btn-danger '>7</span></Col>
-                    <Col><span className='btn btn-success '>8</span></Col>
-                    <Col><span className='btn btn-primary '>9</span></Col>
+                    <Col><span className='btn btn-danger '>4</span></Col>
+                    <Col><span> <button data-v-3acbc54d="" className="btn split1" data-num="0">5</button></span></Col>
+                    <Col><span className='btn btn-danger '>6</span></Col>
+                    <Col><span className='btn btn-success '>7</span></Col>
+                    <Col><span className='btn btn-danger '>8</span></Col>
+                    <Col><span className='btn btn-success '>9</span></Col>
                 </Row>
 
                 <hr />
