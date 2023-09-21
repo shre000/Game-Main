@@ -27,7 +27,7 @@ const WinTopbar = () => {
         </div>
         <div>
         <div className='iconp'>
-        <i class="fa-solid fa-arrows-rotate fa-spin"></i>
+        <i class="fa-solid fa-arrows-rotate "></i>
         </div>
         </div>
 
