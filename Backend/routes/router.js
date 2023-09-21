@@ -66,13 +66,13 @@ router.post("/login", async (req, res) => {
 
     try {
        const userValid = await userdb.findOne({registerMobilenumber:registerMobilenumber});
-
+        console.log(userValid);
         if(userValid){
 
             const isMatch = await bcrypt.compare(registerPassword,userValid.registerPassword);
-
+console.log(isMatch);
             if(!isMatch){
-                res.status(422).json({ error: "invalid details"})
+                res.status(422).json({ error: "Password Didn't Match"})
             }else{
 
                 // token generate
@@ -113,22 +113,22 @@ router.get("/validuser",authenticate,async(req,res)=>{
 
 // // user logout
 
-// router.get("/logout",authenticate,async(req,res)=>{
-//     try {
-//         req.rootUser.tokens =  req.rootUser.tokens.filter((curelem)=>{
-//             return curelem.token !== req.token
-//         });
+router.get("/logout",authenticate,async(req,res)=>{
+    try {
+        req.rootUser.tokens =  req.rootUser.tokens.filter((curelem)=>{
+            return curelem.token !== req.token
+        });
 
-//         res.clearCookie("usercookie",{path:"/"});
+        res.clearCookie("usercookie",{path:"/"});
 
-//         req.rootUser.save();
+        req.rootUser.save();
 
-//         res.status(201).json({status:201})
+        res.status(201).json({status:201})
 
-//     } catch (error) {
-//         res.status(401).json({status:401,error})
-//     }
-// })
+    } catch (error) {
+        res.status(401).json({status:401,error})
+    }
+})
 
 
 module.exports = router;

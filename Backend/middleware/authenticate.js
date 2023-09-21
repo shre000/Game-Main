@@ -7,7 +7,7 @@ const authenticate = async(req,res,next)=>{
 
     try {
         const token = req.headers.authorization;
-        
+        console.log(token);
         const verifytoken = jwt.verify(token,keysecret);
         console.log(varifytoken);
         const rootUser = await userdb.findOne({_id:verifytoken._id});

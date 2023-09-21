@@ -43,10 +43,13 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save",async function(next){
+    if (this.isModified("registerPassword")) {
     this.registerPassword = await bcrypt.hash(this.registerPassword, 12);
     this.registerRepeatPassword = await bcrypt.hash(this.registerRepeatPassword, 12);
+    }
     next()
-})
+
+});
 
 // token generate
 userSchema.methods.generateAuthtoken = async function () {

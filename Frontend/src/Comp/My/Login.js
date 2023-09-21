@@ -7,8 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-    
-
 const [inpval, setInpval] = useState({
     registerMobilenumber: "",
     registerPassword: "",
@@ -34,7 +32,7 @@ const loginuser = async(e) => {
     const { registerMobilenumber, registerPassword } = inpval;
 
     if (registerMobilenumber === "") {
-        toast.error("email is required!", {
+        toast.error("Mobilenumber is required!", {
             position: "top-center"
         });
     } else if (registerPassword === "") {
