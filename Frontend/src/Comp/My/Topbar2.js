@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../Comp-style/topbar2.css'
 import Bell from './Bell';
+import { Link } from 'react-router-dom';
 
 const Topbar2 = () => {
   return (
@@ -26,10 +27,10 @@ const Topbar2 = () => {
               */}
            
             <div className="recharge text-center ">
-              <button type="button" className='btn btn-purple'> Recharge</button>
+              <Link to={'/recharge'}><button type="button" className='btn btn-purple'> Recharge</button></Link>
             </div>
             <div className="withdraw text-center mt-2 ">
-              <button type="button" className='btn btn-purple'> <span>Withdraw</span></button>
+              <Link to={'/withdrawl'}><button type="button" className='btn btn-purple'> <span>Withdraw</span></button></Link>
             </div>
           </div>
          
