@@ -88,13 +88,13 @@ const loginuser = async(e) => {
 
                         {/* <!-- Email input --> */}
                         <div className="form-outline mb-4">
-                            <input id="registerMobilenumber" htmlFor="registerMobilenumber" onChange={setVal} value={inpval.registerMobilenumber} name="registerMobilenumber" />
+                            <input id="registerMobilenumber" htmlFor="registerMobilenumber" onChange={setVal} value={inpval.registerMobilenumber} name="registerMobilenumber" className='form-control' />
                             <label className="form-label" htmlFor="registerMobilenumber">Phone number</label>
                         </div>
 
                         {/* <!-- Password input --> */}
                         <div className="form-outline mb-4">
-                            <input type="password" id="registerPassword" htmlFor= "registerPassword" onChange={setVal} value={inpval.registerPassword} name="registerPassword" />
+                            <input type="password" id="registerPassword" htmlFor= "registerPassword" onChange={setVal} value={inpval.registerPassword} name="registerPassword" className='form-control' />
                             <label className="form-label" htmlFor="registerPassword">Password</label>
                         </div>
 
@@ -113,7 +113,9 @@ const loginuser = async(e) => {
                                 <a href="#!">Forgot password?</a>
                             </div>
                         </div>
+                        <div className='text-center mb-2'>
                         <button className="btn btn-purple" onClick={loginuser}>Login</button>
+                        </div>
                         {/* <!-- Submit button -->  <Link to={'/login-dashboard'}>*/}
                         {/* <center> <button className="btn btn-purple  btn-block mb-5 mt-2 mx-5" onClick={loginuser}>Sign Up</button></center>
                        <center><button type="submit" onClick={loginuser} className="btn btn-purple  btn-block mb-3 mx-5">Sign in</button></center> */}

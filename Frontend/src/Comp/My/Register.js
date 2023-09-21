@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Footer from '../Home/Footer'
-import {useNavigate} from "react-router-dom"
-import {toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom"
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
@@ -9,90 +9,90 @@ const Register = () => {
   const [inpval, setInpval] = useState({
     registerMobilenumber: "",
     registerVerificationcode: "",
-    registerRecommendationcode:"",
+    registerRecommendationcode: "",
     registerPassword: "",
     registerRepeatPassword: ""
-});
+  });
 
-const history = useNavigate();
-const setVal = (e) => {
+  const history = useNavigate();
+  const setVal = (e) => {
     // console.log(e.target.value);
     const { name, value } = e.target;
 
     setInpval(() => {
-        return {
-            ...inpval,
-            [name]: value
-        }
+      return {
+        ...inpval,
+        [name]: value
+      }
     })
-};
+  };
 
-const addUserdata = async (e) => {
-  e.preventDefault();
+  const addUserdata = async (e) => {
+    e.preventDefault();
 
-  const { registerMobilenumber, registerVerificationcode, registerRecommendationcode, registerPassword,registerRepeatPassword } = inpval;
+    const { registerMobilenumber, registerVerificationcode, registerRecommendationcode, registerPassword, registerRepeatPassword } = inpval;
 
-  if (registerMobilenumber === "") {
+    if (registerMobilenumber === "") {
       toast.warning("fname is required!", {
-          position: "top-center"
-      });
-  } else if (registerVerificationcode === "") {
-      toast.error("referralcode is required!", {
-          position: "top-center"
-      });
-  } else if (registerRecommendationcode === "") {
-    toast.warning("recomdationcode is required!", {
         position: "top-center"
-    });
-} else if (registerPassword === "") {
+      });
+    } else if (registerVerificationcode === "") {
+      toast.error("referralcode is required!", {
+        position: "top-center"
+      });
+    } else if (registerRecommendationcode === "") {
+      toast.warning("recomdationcode is required!", {
+        position: "top-center"
+      });
+    } else if (registerPassword === "") {
       toast.error("password is required!", {
-          position: "top-center"
+        position: "top-center"
       });
-  } else if (typeof registerPassword === 'string' && registerPassword.length < 5) {
+    } else if (typeof registerPassword === 'string' && registerPassword.length < 5) {
       toast.error("password must be 6 char!", {
-          position: "top-center"
+        position: "top-center"
       });
-  } else if (registerRepeatPassword === "") {
+    } else if (registerRepeatPassword === "") {
       toast.error("cpassword is required!", {
-          position: "top-center"
+        position: "top-center"
       });
-  }
-  else if (typeof registerRepeatPassword === 'string' && registerRepeatPassword.length < 5) {
-    toast.error("confirm password must be 6 char!", {
-      position: "top-center"
-    });
-  } else if (registerPassword !== registerRepeatPassword) {
+    }
+    else if (typeof registerRepeatPassword === 'string' && registerRepeatPassword.length < 5) {
+      toast.error("confirm password must be 6 char!", {
+        position: "top-center"
+      });
+    } else if (registerPassword !== registerRepeatPassword) {
       toast.error("pass and Cpass are not matching!", {
-          position: "top-center"
+        position: "top-center"
       });
- } else {
+    } else {
       console.log("user registration succesfully done");
 
 
-      const data = await fetch("/register", {      
-          method: "POST",
-          headers: {
-              "Content-Type": 'application/json'
-          },
-          body: JSON.stringify({
-            registerMobilenumber, 
-            registerVerificationcode,
-            registerRecommendationcode, 
-            registerPassword, 
-            registerRepeatPassword
-          })
+      const data = await fetch("/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({
+          registerMobilenumber,
+          registerVerificationcode,
+          registerRecommendationcode,
+          registerPassword,
+          registerRepeatPassword
+        })
       });
-console.log(data);
+      console.log(data);
       const res = await data.json();
       console.log(res);
 
       if (res.status === 201) {
         alert("Registration Successfully done 😃!");
         history("/Login");
-          setInpval({ ...inpval, registerMobilenumber: "", registerVerificationcode: "",registerRecommendationcode: "", registerPassword: "", registerRepeatPassword: "" });
+        setInpval({ ...inpval, registerMobilenumber: "", registerVerificationcode: "", registerRecommendationcode: "", registerPassword: "", registerRepeatPassword: "" });
       }
+    }
   }
-}
 
 
   return (
@@ -114,42 +114,46 @@ console.log(data);
               {/* <!-- Mobile number --> */}
               {/* onChange={setVal} value ={inpval.registerMobilenumber}  */}
               <div className="form-outline mb-2">
-              
-              <label className="form-label" htmlFor="registerMobilenumber">Mobile Number</label>
-              <input onChange={setVal} value={inpval.registerMobilenumber} className="form-control" name="registerMobilenumber" id="registerMobilenumber" placeholder='Enter Your Mobile number' />
+
+                <label className="form-label" htmlFor="registerMobilenumber">Mobile Number</label>
+                <input onChange={setVal} value={inpval.registerMobilenumber} className="form-control" name="registerMobilenumber" id="registerMobilenumber" placeholder='Enter Your Mobile number' />
               </div>
 
               {/* <!-- Verification Code --> */}
               {/*  onChange={setVal} value ={inpval.registerVerificationcode}*/}
-              <div className="form-outline mb-2">
-              <label className="form-label" htmlFor="registerVerificationcode">Verification code</label>
-                <input onChange={setVal} value={inpval.registerVerificationcode} className="form-control" id="registerVerificationcode" name='registerVerificationcode'/>
-                
-              </div>
+            
+                <div className="form-outline mb-2">
+                  <label className="form-label" htmlFor="registerVerificationcode">Verification code</label>
+                  <input onChange={setVal} value={inpval.registerVerificationcode} className="form-control" id="registerVerificationcode" name='registerVerificationcode' placeholder='Enter otp sent to your number' />
+                  <div className='text-center my-2'>
+                  <button className='btn btn-primary'>Otp</button>
+                  </div>
+                </div>
+            
 
               {/* <!-- Recommendation code --> */}
               {/* onChange={setVal} value ={inpval.registerRecommendationcode}  */}
               <div className="form-outline mb-2">
-              <label className="form-label" htmlFor="registerRecommendationcode">Recommendation Code</label>
-                <input onChange={setVal} value ={inpval.registerRecommendationcode}id="registerRecommendationcode" className="form-control" name='registerRecommendationcode'/>
-               
+                <label className="form-label" htmlFor="registerRecommendationcode">Recommendation Code</label>
+                <input onChange={setVal} value={inpval.registerRecommendationcode} id="registerRecommendationcode" className="form-control" name='registerRecommendationcode'placeholder='Enter your recommendation code' />
+
               </div>
-           
+
 
               {/* <!-- Password input --> */}
               {/* //onChange={setVal} value ={inpval.registerPassword} */}
               <div className="form-outline mb-2">
-              <label className="form-label" htmlFor="registerPassword">Password</label>
-                <input onChange={setVal} value ={inpval.registerPassword}id="registerPassword" className="form-control" name='registerPassword' />
-               
+                <label className="form-label" htmlFor="registerPassword">Password</label>
+                <input onChange={setVal} value={inpval.registerPassword} id="registerPassword" className="form-control" name='registerPassword' placeholder='Create your password' />
+
               </div>
 
-              {/* <!-- Repeat Password input --> */} 
+              {/* <!-- Repeat Password input --> */}
               {/* //onChange={setVal} value ={inpval.registerRepeatPassword}  */}
               <div className="form-outline mb-2">
-              <label className="form-label" htmlFor="registerRepeatPassword">Confirm password</label>
-                <input onChange={setVal} value ={inpval.registerRepeatPassword} id="registerRepeatPassword" className="form-control" name='registerRepeatPassword' />
-               
+                <label className="form-label" htmlFor="registerRepeatPassword">Confirm password</label>
+                <input onChange={setVal} value={inpval.registerRepeatPassword} id="registerRepeatPassword" className="form-control" name='registerRepeatPassword' placeholder='Confirm your password' />
+
               </div>
 
               {/* <!-- Checkbox --> */}
@@ -169,7 +173,7 @@ console.log(data);
         </div>
       </div>
       <br />
-     
+
       <div>
         <Footer />
       </div>
