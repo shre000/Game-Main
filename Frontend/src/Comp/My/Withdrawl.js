@@ -7,7 +7,7 @@ const Withdrawl = () => {
     return (
         <div>
             <div className='promotion-outer p-2'>
-                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Withdrawl</span></Link> <Link to={'/withdrawl_record'}><span className='withdrawl-record-icon'>  <i class="fa-solid fa-money-bill-transfer "></i>&nbsp; Record</span></Link>
+                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Withdrawl</span></Link> <Link to={'/withdrawl_record'}><span className='withdrawl-record-icon'>  <i class="fa-solid fa-money-bill-transfer "></i>&nbsp; Record</span></Link>
             </div>
             <div className='text-center fs-5 my-2'>
                 Balance :&#8377; 643.4
