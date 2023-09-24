@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Upi = () => {
+const Wupi = () => {
     return (
         <div>
             <div className='bonus-inner p-2'>
@@ -39,4 +39,4 @@ const Upi = () => {
     )
 }
 
-export default Upi
+export default Wupi
