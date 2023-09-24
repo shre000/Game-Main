@@ -1,5 +1,5 @@
 
-import { Routes , Route } from 'react-router-dom';
+import { Routes , Route,Navigate } from 'react-router-dom';
 import './App.css';
 // import Section1 from './Comp/Section1';
 import Home from './Comp/Home/Home';
@@ -23,6 +23,8 @@ import Upi from './Comp/My/Upi';
 import Transactions from './Comp/My/Transactions';
 import Agreement from './Comp/My/Agreement';
 import Privacypolicy from './Comp/My/Privacypolicy';
+
+
 // import P from './Comp/My/Win Components/P';
 // import S from './Comp/My/Win Components/S';
 // import B from './Comp/My/Win Components/B';
@@ -34,6 +36,8 @@ import Privacypolicy from './Comp/My/Privacypolicy';
 
 
 function App () {
+  let token = localStorage.getItem("usersdatatoken");
+    console.log(token);
   return (
     
     <>
@@ -42,8 +46,9 @@ function App () {
       <Route path= '/home2' element ={<Home2/>}></Route>
       <Route path= '/search' element ={<Search/>}></Route>
       <Route path= '/search2' element ={<Search2/>}></Route>
-
       <Route path= '/my2' element ={<My2/>}></Route>
+
+      {/* <Route path="/my2" element={token ? <My2 /> : <Navigate to="/login" />} /> */}
       <Route path= '/login' element ={<Login/>}></Route>
       <Route path= '/resetpassword' element ={<Password/>}></Route>
 

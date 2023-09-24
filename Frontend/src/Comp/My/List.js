@@ -1,21 +1,43 @@
 import React, { useContext } from 'react'
 import '../../Comp-style/list.css'
 import Accordion from 'react-bootstrap/Accordion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { LoginContext } from './context';
 
 const List = () => {
     const { logindata, setLoginData } = useContext(LoginContext);
     //console.log(logindata.ValidUserOne.registermobilenumber);
-    
+    let token = localStorage.getItem("usersdatatoken");
+    console.log(token);
+    const history = useNavigate();
+    // let token = localStorage.getItem("usersdatatoken");
+    // console.log(token);
+    // const history = useNavigate();
+  
+    if(token === null){
+      alert("Please Login Again");
+    }else{
+      history("/login");
+  
+    }
+    const logout = async () => {
+localStorage.clear();
+history("/login");
+console.log("Logout User Successfully");
+    }
+
     const logoutuser = async () => {
-        let token = localStorage.getItem("usersdatatoken");
-console.log(token);
-        const res = await fetch("/logout", {
+     
+if(!token){
+    alert("Please Login Again");
+    return;
+}
+try{   
+    const res = await fetch("/logout", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": token,
+                "Authorization": `Bearer ${token}`, 
                 Accept: "application/json"
             },
             credentials: "include"
@@ -24,15 +46,19 @@ console.log(token);
         const data = await res.json();
         console.log(data);
 
-        try {(data.status == 201) 
+        if (data.status == 201) {
             console.log("use logout");
             localStorage.removeItem("usersdatatoken");
+localStorage.clear();
+
             setLoginData(false)
-            history("/register");
-        } catch(error) {
-            console.log(error);
+            history("/login");
+        } else {
+            console.log(data.error);
         }
-    }
+    }  catch(error){
+    console.log(error)
+} }
     return (
         <div>
             <div className="container py-1 mb-4">
@@ -78,7 +104,7 @@ console.log(token);
                     </Accordion>
 
                 </ul>
-                <center> <button type='button' onClick={logoutuser} className='btn btn-purple'>Sign Out</button>  </center>
+                <center> <button type='button' onClick={logout} className='btn btn-purple'>Sign Out</button>  </center>
             </div>
 
 
@@ -86,4 +112,4 @@ console.log(token);
     )
 }
 
-export default List
+export default List;

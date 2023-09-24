@@ -6,6 +6,7 @@ import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const Login = () => {
 const [inpval, setInpval] = useState({
     registerMobilenumber: "",
@@ -32,10 +33,20 @@ const loginuser = async(e) => {
     const { registerMobilenumber, registerPassword } = inpval;
 
     if (registerMobilenumber === "") {
+        alert(" Mobilenumber is required! ");
         toast.error("Mobilenumber is required!", {
             position: "top-center"
         });
+        
+    } else if (!registerMobilenumber.includes("91")) {
+        alert(" Mobile number must include '91' ");
+        toast.error("Mobile number must include '91'", {
+            position: "top-center"
+        });
+        
     } else if (registerPassword === "") {
+        alert("password is required!");
+
         toast.error("password is required!", {
             position: "top-center"
         });
@@ -110,7 +121,8 @@ const loginuser = async(e) => {
 
                             <div className="col-md-6 d-flex justify-content-center">
                                 {/* <!-- Simple link --> */}
-                                <a href="#!">Forgot password?</a>
+                                {/* <a href="/resetpassword">Forgot password?</a> */}
+                                <Link to={'/resetpassword'}>Forgot password?</Link>
                             </div>
                         </div>
                         <div className='text-center mb-2'>
