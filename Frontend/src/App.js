@@ -23,6 +23,10 @@ import Upi from './Comp/My/Upi';
 import Transactions from './Comp/My/Transactions';
 import Agreement from './Comp/My/Agreement';
 import Privacypolicy from './Comp/My/Privacypolicy';
+import Record_recharge from './Comp/My/Record_recharge';
+import Record_withdrawl from './Comp/My/Record_withdrawl';
+import Wbank from './Comp/My/Wbank';
+import Wupi from './Comp/My/Wupi';
 // import P from './Comp/My/Win Components/P';
 // import S from './Comp/My/Win Components/S';
 // import B from './Comp/My/Win Components/B';
@@ -66,6 +70,14 @@ function App () {
       <Route path='/transactions' element={<Transactions/>}></Route>
       <Route path='/privacypolicy' element={<Privacypolicy/>}></Route>
       <Route path='/agreement' element={<Agreement/>}></Route>
+
+      <Route path='/recharge_record' element={<Record_recharge/>}></Route>
+      <Route path='/withdrawl_record' element={<Record_withdrawl/>}></Route>
+      
+      <Route path='/wbank' element={<Wbank/>}></Route>
+      <Route path='/wupi' element={<Wupi/>}></Route>
+
+
 
 
 
