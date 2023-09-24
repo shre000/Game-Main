@@ -13,16 +13,16 @@ const Transactions = () => {
 
         <div>
             <div className='promotion-outer p-2'>
-                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Transactions</span></Link>
+                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Transactions</span></Link>
             </div>
 
             <div className="row my-2">
                 <div className="col-6 px-5">
-                    <div className='my-2'><i class="fa-solid fa-money-bill-transfer fa-flip"></i> Withdrawl  <br /> {date}</div> <hr />
-                    <div className='my-2'><i class="fa-brands fa-gratipay fa-flip"></i>Not enough  bets<br /> {date1}</div> <hr />
-                    <div className='my-2'><i class="fa-brands fa-gratipay fa-flip"></i> Not enough bets<br />{date2}</div> <hr />
-                    <div className='my-2'><i class="fa-solid fa-money-bill-transfer fa-flip"></i> Widthdrawl<br />{date3}</div> <hr />
-                    <div className='my-2'><i class="fa-brands fa-gratipay fa-flip"></i> Joined<br />{date4}</div> <hr />
+                    <div className='my-2'><i class="fa-solid fa-money-bill-transfer "></i> Withdrawl  <br /> {date}</div> <hr />
+                    <div className='my-2'><i class="fa-brands fa-gratipay "></i>Not enough  bets<br /> {date1}</div> <hr />
+                    <div className='my-2'><i class="fa-brands fa-gratipay "></i> Not enough bets<br />{date2}</div> <hr />
+                    <div className='my-2'><i class="fa-solid fa-money-bill-transfer "></i> Widthdrawl<br />{date3}</div> <hr />
+                    <div className='my-2'><i class="fa-brands fa-gratipay "></i> Joined<br />{date4}</div> <hr />
                 </div>
                 <div className="col-6 text-end px-5 ">
                     <div className='my-2 text-danger'>-300 <br /> {date}</div> <hr />

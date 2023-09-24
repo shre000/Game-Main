@@ -2,14 +2,14 @@ import React from 'react'
 // import Addbank from './Addbank'
 import { Link } from 'react-router-dom'
 
-const Selectbank = () => {
+const Wbank = () => {
     return (
         <div>
              <div className='bonus-inner p-2'>
-                <Link className='promotion-outer' to={'/bankcard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Add Bank</span></Link>
+                <Link className='promotion-outer' to={'/withdrawl'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Add Bank</span></Link>
             </div>
             <div className='text-center bonus-inner py-4'>
-                    <p><span className=''><Link to={'/selectbank'}>Select Bank Card</Link></span> &nbsp; <span><Link to={'/selectupi'}>Select Upi</Link></span></p>
+                    <p><span className=''><Link to={'/selectbank'}>Select Bank Card</Link></span> </p>
 
                 </div>
 
@@ -46,4 +46,4 @@ const Selectbank = () => {
     )
 }
 
-export default Selectbank
+export default Wbank

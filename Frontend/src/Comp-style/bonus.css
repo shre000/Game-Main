@@ -19,3 +19,11 @@
     color: white;
     text-decoration: none;
 }
+.recharge-record-icon{
+    position: absolute;
+    right: 30px;
+}
+.withdrawl-record-icon{
+    position: absolute;
+    right: 30px;
+}

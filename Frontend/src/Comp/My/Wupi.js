@@ -1,17 +1,16 @@
 import React from 'react'
-// import Addbank from './Addbank'
 import { Link } from 'react-router-dom'
 
-const Selectbank = () => {
+const Upi = () => {
     return (
         <div>
-             <div className='bonus-inner p-2'>
-                <Link className='promotion-outer' to={'/bankcard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Add Bank</span></Link>
+            <div className='bonus-inner p-2'>
+                <Link className='promotion-outer' to={'/withdrawl'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Add Bank</span></Link>
             </div>
             <div className='text-center bonus-inner py-4'>
-                    <p><span className=''><Link to={'/selectbank'}>Select Bank Card</Link></span> &nbsp; <span><Link to={'/selectupi'}>Select Upi</Link></span></p>
+                <p> &nbsp; <span><Link to={'/selectupi'}>Select Upi</Link></span></p>
 
-                </div>
+            </div>
 
 
 
@@ -19,13 +18,7 @@ const Selectbank = () => {
                 <input type="text" id="actual-name" className="form-control" placeholder='Actual Name' />
             </div>
             <div className="form-outline py-1 mb-1">
-                <input type="text" id="ifsc-code" className="form-control" placeholder='IFSC Code' />
-            </div>
-            <div className="form-outline py-1 mb-1">
-                <input type="text" id="bank-name" className="form-control" placeholder='Bank Name' />
-            </div>
-            <div className="form-outline py-1 mb-1">
-                <input type="text" id="bank-account" className="form-control" placeholder='Bank Account ' />
+                <input type="text" id="upi-account" className="form-control" placeholder='Upi Account ' />
             </div>
             <div className="form-outline py-1 mb-1">
                 <input type="phone" id="phone-number" className="form-control" placeholder='Phone number' />
@@ -46,4 +39,4 @@ const Selectbank = () => {
     )
 }
 
-export default Selectbank
+export default Upi

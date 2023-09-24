@@ -8,7 +8,7 @@ const Bonus = () => {
             <div className="bonus w-100">
                
                    <div className='bonus-inner py-2 px-2'>
-                   <Link to={'/login-dashboard'} ><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Bonus Record</span></Link>
+                   <Link to={'/login-dashboard'} ><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Bonus Record</span></Link>
                    </div>
                 
                 <div className='text-center bonus-inner py-4'>
