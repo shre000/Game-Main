@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const keysecret = "shreyasumanpandeysumanpandeyshre"
+const keysecret = "shreyasumanpandeysumanpandeyshre";
 
 
 const userSchema = new mongoose.Schema({
@@ -60,16 +60,18 @@ userSchema.methods.generateAuthtoken = async function () {
 
         this.tokens = this.tokens.concat({ token: token23 });
         await this.save();
+        
+        console.log(token23); // Log the token
         return token23;
-        console.log(token23);
     } catch (error) {
-        console.log(error);
-        res.status(422).json(error);
+        console.error(error);
+        return error; // Return the error
     }
 }
 
+
 // createing model
-const userdb = new mongoose.model("AuthUsers", userSchema);
+const userdb = new mongoose.model("authUsers", userSchema);
 
 
 module.exports =userdb;
