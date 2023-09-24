@@ -6,7 +6,7 @@ const Selectbank = () => {
     return (
         <div>
              <div className='bonus-inner p-2'>
-                <Link className='promotion-outer' to={'/bankcard'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Add Bank</span></Link>
+                <Link className='promotion-outer' to={'/bankcard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Add Bank</span></Link>
             </div>
             <div className='text-center bonus-inner py-4'>
                     <p><span className=''><Link to={'/selectbank'}>Select Bank Card</Link></span> &nbsp; <span><Link to={'/selectupi'}>Select Upi</Link></span></p>

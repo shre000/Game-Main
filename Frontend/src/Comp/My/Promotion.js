@@ -6,7 +6,7 @@ const Promotion = () => {
     return (
         <div>
             <div className='promotion-outer p-2 '>
-                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left fa-beat"></i> &nbsp;Promotion</span></Link>
+                <Link className='promotion-outer' to={'/login-dashboard'}><span> <i className="fa-solid fa-arrow-left "></i> &nbsp;Promotion</span></Link>
             </div>
             <div className='text-center py-2'>
                 <div>
