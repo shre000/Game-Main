@@ -27,6 +27,9 @@ const Joinred = () => {
                     <Button variant="danger" onClick={handleClose}>
                         Close
                     </Button>
+                    <Button variant="danger" onClick={handleClose}>
+                        Confirm
+                    </Button>
                     
                 </Modal.Footer>
             </Modal>

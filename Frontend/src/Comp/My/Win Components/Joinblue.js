@@ -27,6 +27,9 @@ const Joinblue = () => {
                     <Button variant="primary" onClick={handleClose}>
                         Close
                     </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Confirm
+                    </Button>
                     
                 </Modal.Footer>
             </Modal>
