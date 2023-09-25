@@ -3,9 +3,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import { Link } from 'react-router-dom';
 import '../../../Comp-style/winsection3.css'
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
+// import { useState } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal'
+import Joingreen from './Joingreen';
+import Joinblue from './Joinblue';
+import Joinred from './Joinred';
 
 
 const WinSection3 = () => {
@@ -34,9 +37,9 @@ const WinSection3 = () => {
                 </div>
                 <div className="container py-2">
                     <Row className='text-center'>
-                        <Col><button className='btn btn-success'>Join Green</button></Col>
-                        <Col><button className='btn btn-primary'>Join Blue</button></Col>
-                        <Col><button className='btn btn-danger'>Join Red</button></Col>
+                        <Col><Joingreen/></Col>
+                        <Col><Joinblue/></Col>
+                        <Col><Joinred/></Col>
                     </Row>
                 </div>
                 <hr />
