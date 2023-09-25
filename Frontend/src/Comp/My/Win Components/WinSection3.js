@@ -9,6 +9,17 @@ import '../../../Comp-style/winsection3.css'
 import Joingreen from './Joingreen';
 import Joinblue from './Joinblue';
 import Joinred from './Joinred';
+import Zero from './Zero';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
+import Five from './Five';
+
+import Six from './Six';
+import Seven from './Seven';
+import Eight from './Eight';
+import Nine from './Nine'
 
 
 const WinSection3 = () => {
@@ -44,16 +55,16 @@ const WinSection3 = () => {
                 </div>
                 <hr />
                 <Row className='text-lg-center text-md-start text-sm-start text-xs-start'>
-                    <Col><span> <button data-v-3acbc54d="" className="btn split0" data-num="0">0</button></span></Col>
-                    <Col><span className='btn btn-success'>1</span></Col>
-                    <Col><span className='btn btn-danger '>2</span></Col>
-                    <Col><span className='btn btn-success '>3</span></Col>
-                    <Col><span className='btn btn-danger '>4</span></Col>
-                    <Col><span> <button data-v-3acbc54d="" className="btn split1" data-num="0">5</button></span></Col>
-                    <Col><span className='btn btn-danger '>6</span></Col>
-                    <Col><span className='btn btn-success '>7</span></Col>
-                    <Col><span className='btn btn-danger '>8</span></Col>
-                    <Col><span className='btn btn-success '>9</span></Col>
+                    <Col><span><Zero/></span></Col>
+                    <Col><span><One/></span></Col>
+                    <Col><span><Two/></span></Col>
+                    <Col><span><Three/></span></Col>
+                    <Col><span><Four/></span></Col>
+                    <Col><span><Five/></span></Col>
+                    <Col><span><Six/></span></Col>
+                    <Col><span><Seven/></span></Col>
+                    <Col><span><Eight/></span></Col>
+                    <Col><span><Nine/></span></Col>
                 </Row>
 
                 <hr />
