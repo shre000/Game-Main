@@ -44,14 +44,27 @@ const Recharge = () => {
 
 
             </div>
-            <div>
-                <div class="list-group text-center my-3">
-                   
-                    <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button> 
-                    <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                    <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                  
-                </div>
+            <hr />
+            <div className='my-3'>
+
+            </div>
+            <div className="form-check mx-5 text-center">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                    <label className="form-check-label mx-5" for="flexRadioDefault1">
+                        Default radio
+                    </label> <hr />
+            </div>
+            <div className="form-check mx-5 text-center">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                    <label className="form-check-label mx-5" for="flexRadioDefault2">
+                        Default checked radio
+                    </label> <hr />
+            </div>
+            <div className="form-check mx-5 text-center">
+                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                    <label className="form-check-label mx-5" for="flexRadioDefault2">
+                        Default checked radio
+                    </label> <hr />
             </div>
             <div className='text-center my-2'>
                 <button className='btn btn-purple'>Recharge</button>
