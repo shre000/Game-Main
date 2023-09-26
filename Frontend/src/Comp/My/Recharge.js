@@ -1,7 +1,24 @@
 import React from 'react'
+import { useState } from "react";
+
 import { Link } from 'react-router-dom'
 
 const Recharge = () => {
+    const [selectedAmount, setSelectedAmount] = useState(''); //
+    const handleAmountButtonClick = (amount) => {
+        setSelectedAmount(amount);
+    };
+    const handleRechargeClick = () => {
+        // Check if a payment method is selected
+        if (selectedPaymentMethod) {
+            // TODO: Initiate payment using the selected payment method
+            // You will need to use the payment gateway SDK here.
+        } else {
+            // Handle the case where no payment method is selected
+            alert('Please select a payment method.');
+        }
+    };
+
     return (
         <div>
 
@@ -13,33 +30,33 @@ const Recharge = () => {
             </div>
             <div className='align-content-lg-start '>
                 <div className="form-outline py-3">
-                    <input type="amount" id="recharge-amount" className="form-control" placeholder='Enter or select recharge amount' />
+                    <input type="amount" id="recharge-amount" className="form-control"  value={selectedAmount} onChange={(e) => setSelectedAmount(e.target.value)} placeholder='Enter or select recharge amount' />
                 </div>
             </div>
             <div className="row text-center ">
                 <div className="  col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>100</button>
+                    <button className='btn btn-warning fs-4'onClick={() => handleAmountButtonClick(100)} >100</button>
                 </div>
                 <div className=" col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>300</button>
+                    <button className='btn btn-warning fs-4'onClick={() => handleAmountButtonClick(300)}>300</button>
                 </div>
                 <div className=" col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>500</button>
+                    <button className='btn btn-warning fs-4'onClick={() => handleAmountButtonClick(500)}>500</button>
                 </div>
                 <div className=" col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>1000</button>
+                    <button className='btn btn-warning fs-4'onClick={() => handleAmountButtonClick(1000)}>1000</button>
                 </div>
                 <div className="col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>2000</button>
+                    <button className='btn btn-warning fs-4' onClick={() => handleAmountButtonClick(2000)}>2000</button>
                 </div>
                 <div className=" col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>5000</button>
+                    <button className='btn btn-warning fs-4' onClick={() => handleAmountButtonClick(5000)}>5000</button>
                 </div>
                 <div className="l col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>10000</button>
+                    <button className='btn btn-warning fs-4' onClick={() => handleAmountButtonClick(10000)}>10000</button>
                 </div>
                 <div className=" col-sm-2 my-2">
-                    <button className='btn btn-warning fs-4'>50000</button>
+                    <button className='btn btn-warning fs-4' onClick={() => handleAmountButtonClick(50000)}>50000</button>
                 </div>
 
 
@@ -67,7 +84,7 @@ const Recharge = () => {
                     </label> <hr />
             </div>
             <div className='text-center my-2'>
-                <button className='btn btn-purple'>Recharge</button>
+                <button className='btn btn-purple' onClick={handleRechargeClick}>Recharge</button>
             </div>
         </div>
     )

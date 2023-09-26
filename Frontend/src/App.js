@@ -23,6 +23,12 @@ import Upi from './Comp/My/Upi';
 import Transactions from './Comp/My/Transactions';
 import Agreement from './Comp/My/Agreement';
 import Privacypolicy from './Comp/My/Privacypolicy';
+import Record_recharge from './Comp/My/Record_recharge';
+import Record_withdrawl from './Comp/My/Record_withdrawl';
+import ResetPassword from './Comp/My/ResetPassword';
+import Wupi from './Comp/My/Wupi';
+
+import Wbank from './Comp/My/Wbank';
 // import P from './Comp/My/Win Components/P';
 // import S from './Comp/My/Win Components/S';
 // import B from './Comp/My/Win Components/B';
