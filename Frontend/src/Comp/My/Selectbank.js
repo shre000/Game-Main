@@ -33,9 +33,9 @@ const Selectbank = () => {
             <div className="form-outline py-1 mb-2">
                 <input type="email" id="email" className="form-control" placeholder='Email' />
             </div>
-            <div className='text-center py-1 mb-2 bg-dark text-light'>
+            {/* <div className='text-center py-1 mb-2 bg-dark text-light'>
                 +917529927715
-            </div>
+            </div> */}
             <div className="form-outline mb-4 py-1">
                 <input type="text" id="verification-code" className="form-control" placeholder='The verification code is sent to the above' />
             </div>

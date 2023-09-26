@@ -283,7 +283,7 @@ const Buttonclick=async(e)=>{
                     className="form-control"
                     name="registerVerificationcode"
                     id="registerVerificationcode"
-                    placeholder="Enter Your Mobile number"
+                    placeholder="Enter one time password (OTP)"
                   />
                   <button className="btn btn-primary" onClick={verifyOtp}>
                     Verify OTP

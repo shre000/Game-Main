@@ -13,7 +13,7 @@ const Parity = () => {
                 <p className='text-center'><i class="fa-solid fa-trophy " ><br /></i> Game Records</p>
 
             </div>
-            <div className="container mb-5">
+            <div className="container-fluid mb-5">
                 <table className="table table-striped mb-4">
                     <thead>
                         <tr>
@@ -76,7 +76,7 @@ const Parity = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className="container">
+                <div className="container-fluid">
                     <p className='text-center'><i class="fa-solid fa-book "></i>My Records</p>
                     <Records/>
                 </div>

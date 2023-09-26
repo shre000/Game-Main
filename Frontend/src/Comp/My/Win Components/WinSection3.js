@@ -3,9 +3,23 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import { Link } from 'react-router-dom';
 import '../../../Comp-style/winsection3.css'
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal'
+// import { useState } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal'
+import Joingreen from './Joingreen';
+import Joinblue from './Joinblue';
+import Joinred from './Joinred';
+import Zero from './Zero';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
+import Five from './Five';
+
+import Six from './Six';
+import Seven from './Seven';
+import Eight from './Eight';
+import Nine from './Nine'
 
 
 const WinSection3 = () => {
@@ -34,23 +48,23 @@ const WinSection3 = () => {
                 </div>
                 <div className="container py-2">
                     <Row className='text-center'>
-                        <Col><button className='btn btn-success'>Join Green</button></Col>
-                        <Col><button className='btn btn-primary'>Join Blue</button></Col>
-                        <Col><button className='btn btn-danger'>Join Red</button></Col>
+                        <Col><Joingreen/></Col>
+                        <Col><Joinblue/></Col>
+                        <Col><Joinred/></Col>
                     </Row>
                 </div>
                 <hr />
                 <Row className='text-lg-center text-md-start text-sm-start text-xs-start'>
-                    <Col><span> <button data-v-3acbc54d="" className="btn split0" data-num="0">0</button></span></Col>
-                    <Col><span className='btn btn-success'>1</span></Col>
-                    <Col><span className='btn btn-danger '>2</span></Col>
-                    <Col><span className='btn btn-success '>3</span></Col>
-                    <Col><span className='btn btn-danger '>4</span></Col>
-                    <Col><span> <button data-v-3acbc54d="" className="btn split1" data-num="0">5</button></span></Col>
-                    <Col><span className='btn btn-danger '>6</span></Col>
-                    <Col><span className='btn btn-success '>7</span></Col>
-                    <Col><span className='btn btn-danger '>8</span></Col>
-                    <Col><span className='btn btn-success '>9</span></Col>
+                    <Col><span><Zero/></span></Col>
+                    <Col><span><One/></span></Col>
+                    <Col><span><Two/></span></Col>
+                    <Col><span><Three/></span></Col>
+                    <Col><span><Four/></span></Col>
+                    <Col><span><Five/></span></Col>
+                    <Col><span><Six/></span></Col>
+                    <Col><span><Seven/></span></Col>
+                    <Col><span><Eight/></span></Col>
+                    <Col><span><Nine/></span></Col>
                 </Row>
 
                 <hr />
