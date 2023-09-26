@@ -94,26 +94,6 @@ const Register = () => {
     onCapthVerify();
   };
   
-  const verifyCode = () => {
-    const otp = inpval.otp;
-    if (window.confirmationResult) {
-      window.confirmationResult
-        .confirm(otp)
-        .then((result) => {
-          // User signed in successfully.
-          const user = result.user;
-          alert("Verification Done");
-          // ...
-        })
-        .catch((error) => {
-          alert("Invalid OTP");
-          // User couldn't sign in (bad verification code?)
-          // ...
-        });
-    } else {
-      alert("Confirmation result is not available. Please send OTP first.");
-    }
-  };
     
   const verifyOtp = (event) => {
      event.preventDefault(); 

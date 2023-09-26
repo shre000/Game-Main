@@ -3,6 +3,10 @@ const router = new express.Router();
 const userdb = require("../models/userSchema")
 const bcrypt = require("bcryptjs");
 const authenticate = require("../middleware/authenticate");
+const nodemailer = require('nodemailer');
+const { generateResetToken, sendResetEmail } = require('../models/utils');
+const jwt = require("jsonwebtoken");
+
 const keysecret = "shreyasumanpandeysumanpandeyshre"
 // for user registration
 router.post("/register", async (req, res) => {
@@ -52,9 +56,6 @@ router.post("/register", async (req, res) => {
 
 });
 
-
-
-
 // user Login
 
 router.post("/login", async (req, res) => {
@@ -100,8 +101,6 @@ console.log(isMatch);
     }
 });
 
-
-
 // // user valid
 router.get("/validuser",authenticate,async(req,res)=>{
     try {
@@ -111,8 +110,6 @@ router.get("/validuser",authenticate,async(req,res)=>{
         res.status(401).json({status:401,error});
     }
 });
-
-
 // // user logout
 
 router.get("/logout",authenticate,async(req,res)=>{
@@ -132,49 +129,66 @@ router.get("/logout",authenticate,async(req,res)=>{
     }
 })
 
-router.post("/forgot-password", async (req, res) => {
-    const { registerMobilenumber } = req.body;
-    try {
-      const oldUser = await userdb.findOne({ registerMobilenumber });
-      if (!oldUser) {
-        return res.json({ status: "User Not Exists!!" });
-      }
-      const secret = keysecret + oldUser.registerPassword;
-      const token = jwt.sign({ registerMobilenumber: oldUser.registerMobilenumber, id: oldUser._id }, secret, {
-        expiresIn: "5m",
-      });
-      const link = `http://localhost:3000/reset-password/${oldUser._id}/${token}`;
-      console.log(link);
-    //   var transporter = nodemailer.createTransport({
-    //     service: "gmail",
-    //     auth: {
-    //       user: "adarsh438tcsckandivali@gmail.com",
-    //       pass: "rmdklolcsmswvyfw",
-    //     },
-    //   });
+router.post('/forgot-password', (req, res) => {
+    const { email ,registerMobilenumber} = req.body;
+    console.log(email)
+    console.log(registerMobilenumber)
+
+    const users = userdb.findOne({ registerMobilenumber: registerMobilenumber  })
+    .then(user => {
+        if(!user) {
+            console.log(user)
+            console.log(users)
+
+            return res.send({Status: "User not existed"})
+        } 
+        console.log(user)
+        console.log(users)
+        const token = jwt.sign({id: user._id}, keysecret, {expiresIn: "1d"})
+        console.log(user._id);
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'shriancodes@gmail.com',
+              pass: 'lqoq aagl alck cttx'
+            }
+          });
+          
+          var mailOptions = {
+            from: 'sumanshreya000@gmail.com',
+            to: email,
+            subject: 'Reset Password Link',
+            text: `http://localhost:3000/reset_password/${user._id}/${token}`
+          };
+          
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+                console.log("Email sent: " + info.response);
+              return res.send({Status: "Success"})
+            }
+          });
+    })
+})
+
+router.post('/reset-password/:id/:token', (req, res) => {
+    const {id, token} = req.params
+    const {newpassword} = req.body
+
+    jwt.verify(token,keysecret, (err, decoded) => {
+        if(err) {
+            return res.json({Status: "Error with token"})
+        } else {
+            bcrypt.hash(newpassword, 10)
+            .then(hash => {
+                userdb.findByIdAndUpdate({_id: id}, {registerPassword: hash})
+                .then(u => res.send({Status: "Success"}))
+                .catch(err => res.send({Status: err}))
+            })
+            .catch(err => res.send({Status: err}))
+        }
+    })
+})
   
-    //   var mailOptions = {
-    //     from: "youremail@gmail.com",
-    //     to: "thedebugarena@gmail.com",
-    //     subject: "Password Reset",
-    //     text: link,
-    //   };
-  
-    //   transporter.sendMail(mailOptions, function (error, info) {
-    //     if (error) {
-    //       console.log(error);
-    //     } else {
-    //       console.log("Email sent: " + info.response);
-    //     }
-    //   });
-    //   console.log(link);
-    } catch (error) { }
-  });
-
-
-
-router.post("/reset-password", async (req, res) => {
-    const {id, token } = req.params;
-    console.log(req.params);
-});
 module.exports = router;
