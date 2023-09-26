@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal'
+import Counter from './Counter';
 
 
 
@@ -22,9 +23,8 @@ const Joingreen = () => {
                 <Modal.Header className='bg-success text-light' closeButton>
                     <Modal.Title className='fs-5 text-center'>Join green</Modal.Title>
                 </Modal.Header>
-                <Modal.Body> Read the instructions mentioned below carefully 
-
-
+                <Modal.Body> 
+                    <Counter/>
                 </Modal.Body>
                 <Modal.Footer >
                     <Button variant="success" onClick={handleClose}>
