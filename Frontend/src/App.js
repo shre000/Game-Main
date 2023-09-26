@@ -23,7 +23,17 @@ import Upi from './Comp/My/Upi';
 import Transactions from './Comp/My/Transactions';
 import Agreement from './Comp/My/Agreement';
 import Privacypolicy from './Comp/My/Privacypolicy';
-// import P from './Comp/My/Win Components/P';
+import Record_recharge from './Comp/My/Record_recharge';
+import Record_withdrawl from './Comp/My/Record_withdrawl';
+import ResetPassword from './Comp/My/ResetPassword';
+
+import Wbank from './Comp/My/Wbank';
+
+import Wupi from './Comp/My/Wupi';
+
+
+
+// import P from './Comp/My/Win Components/P'; Record_withdrawl
 // import S from './Comp/My/Win Components/S';
 // import B from './Comp/My/Win Components/B';
 // import E from './Comp/My/Win Components/E';
@@ -75,6 +85,8 @@ function App () {
       
       <Route path='/wbank' element={<Wbank/>}></Route>
       <Route path='/wupi' element={<Wupi/>}></Route>
+      <Route path='/reset_password/:id/:token' element={<ResetPassword/>}></Route>
+
 
 
 

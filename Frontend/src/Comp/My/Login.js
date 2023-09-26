@@ -75,6 +75,8 @@ const loginuser = async(e) => {
             localStorage.setItem("usersdatatoken",res.result.token);
             history("/My2")
             setInpval({...inpval,registerMobilenumber:"",registerPassword:""});
+        }else{
+            alert("invalid Credentiales");
         }
     }
 }
