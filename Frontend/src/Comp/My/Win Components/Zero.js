@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal'
+import Counter from './Counter';
 
 
 
@@ -25,7 +26,7 @@ const Zero = () => {
                 </Modal.Header>
                 <Modal.Body> 
 
-
+                    <Counter/>
                 </Modal.Body>
                 <Modal.Footer >
                     <Button variant="dark" onClick={handleClose}>
