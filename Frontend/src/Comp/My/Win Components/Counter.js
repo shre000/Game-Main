@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import '../../../Comp-style/counter.css'
 
 const Counter = () => {
     // Set the initial count state to zero, 0
