@@ -197,8 +197,8 @@ router.post('/reset-password/:id/:token', (req, res) => {
 router.post("/orders", async (req, res) => {
 	try {
 		const instance = new Razorpay({
-			key_id: process.env.KEY_ID,
-			key_secret: process.env.KEY_SECRET,
+			key_id: "rzp_test_j1PZItNuQesYAJ",
+			key_secret:"oinMfl4Gf0VHRJI7i6zHPHuv",
 		});
 
 		const options = {

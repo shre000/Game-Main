@@ -6,7 +6,7 @@ import Counter from './Counter';
 
 
 
-const Three = () => {
+const Three = ({ disabled }) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -18,7 +18,7 @@ const Three = () => {
             {/* <Button variant="success" className='btn' onClick={handleShow} >
                 Select Zero
             </Button> */}
-            <Button data-v-3acbc54d="" onClick={handleShow} className="btn btn-success" data-num="0">3</Button>
+            <Button data-v-3acbc54d="" disabled={disabled} onClick={handleShow} className="btn btn-success" data-num="0">3</Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className='bg-dark text-light' closeButton>

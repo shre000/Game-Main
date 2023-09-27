@@ -6,7 +6,7 @@ import Counter from './Counter';
 
 
 
-const Joinred = () => {
+const Joinred = ({ disabled }) =>  {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -15,9 +15,9 @@ const Joinred = () => {
    
     return (
         <div>
-            <Button variant="danger" className='btn' onClick={handleShow} >
-                Join Red
-            </Button>
+            <Button variant="success" className='btn' onClick={handleShow} disabled={disabled}>
+        Join Red
+      </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header  className='bg-danger text-light'closeButton>

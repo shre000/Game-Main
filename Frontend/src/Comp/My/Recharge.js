@@ -1,21 +1,48 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import { loadScript } from './loadScript';
 
 import { Link } from 'react-router-dom'
 
 const Recharge = () => {
-    const [selectedAmount, setSelectedAmount] = useState(''); //
+    const [selectedAmount, setSelectedAmount] = useState('');
+
     const handleAmountButtonClick = (amount) => {
         setSelectedAmount(amount);
     };
+
     const handleRechargeClick = () => {
         // Check if a payment method is selected
-        if (selectedPaymentMethod) {
-            // TODO: Initiate payment using the selected payment method
-            // You will need to use the payment gateway SDK here.
+        if (selectedAmount) {
+            initializeRazorpay();
         } else {
-            // Handle the case where no payment method is selected
-            alert('Please select a payment method.');
+            alert('Please select an amount to recharge.');
+        }
+    };
+
+    const initializeRazorpay = () => {
+        if (window.Razorpay) {
+            const options = {
+                key: 'rzp_test_GpYsVRT9YxF0EG', // Replace with your Razorpay API Key
+                amount: selectedAmount * 100, // Amount in paise (multiply by 100)
+                currency: 'INR',
+                name: 'GameZone',
+                description: 'Recharge',
+                image: '/c4.jpg',
+                handler: function (response) {
+                    // Handle the payment success callback
+                    alert('Payment Successful: ' + response.razorpay_payment_id);
+                },
+                prefill: {
+                    name: '',
+                    email: '',
+                    contact: '',
+                },
+            };
+            const rzp = new window.Razorpay(options);
+            rzp.open();
+        } else {
+            alert('Razorpay is not loaded. Please try again later.');
         }
     };
 
@@ -68,25 +95,26 @@ const Recharge = () => {
             <div className="form-check mx-5 text-center">
                 <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                     <label className="form-check-label mx-5" for="flexRadioDefault1">
-                        Default radio
+                        SEPROPAY_UPI
                     </label> <hr />
             </div>
-            <div className="form-check mx-5 text-center">
+            {/* <div className="form-check mx-5 text-center">
                 <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
                     <label className="form-check-label mx-5" for="flexRadioDefault2">
                         Default checked radio
                     </label> <hr />
-            </div>
+            </div> */}
             <div className="form-check mx-5 text-center">
                 <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
                     <label className="form-check-label mx-5" for="flexRadioDefault2">
-                        Default checked radio
+                       Fastest Way
                     </label> <hr />
             </div>
             <div className='text-center my-2'>
                 <button className='btn btn-purple' onClick={handleRechargeClick}>Recharge</button>
             </div>
         </div>
+       
     )
 }
 
