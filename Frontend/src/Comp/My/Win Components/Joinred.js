@@ -15,7 +15,7 @@ const Joinred = ({ disabled }) =>  {
    
     return (
         <div>
-            <Button variant="success" className='btn' onClick={handleShow} disabled={disabled}>
+            <Button variant="danger" className='btn' onClick={handleShow} disabled={disabled}>
         Join Red
       </Button>
 
