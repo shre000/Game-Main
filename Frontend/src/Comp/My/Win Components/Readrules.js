@@ -11,7 +11,7 @@ const Readrules = () => {
   return (
     <div>
        <div>
-            <Button className='btn btn-purple' onClick={handleShow} >
+            <Button className='btn btn-orange' onClick={handleShow} >
              Rules
             </Button>
 
