@@ -46,7 +46,7 @@ const Withdrawl = () => {
                 </div>
             </div>
             <div className='my-2 text-center'>
-                <button className="btn btn-purple">Withdrawl</button>
+                <button className="btn btn-orange">Withdrawl</button>
             </div>
 
         </div>

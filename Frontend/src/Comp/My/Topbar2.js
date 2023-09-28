@@ -12,14 +12,14 @@ const Topbar2 = () => {
         </p>
 
         <div className="row">
-          <div className="one">
+          <div className="wc1">
             <center><span className='text-center mt-2 '>Available Balance</span><br />
               <span><button type="" className=" btn bg-purple text-light mb-4">&#x20B9;&nbsp;643.4</button></span></center>
 
 
 
           </div>
-          <div className="two">
+          <div className="wc2">
             <div className='position-absolute'>
             <Bell/>
             </div>

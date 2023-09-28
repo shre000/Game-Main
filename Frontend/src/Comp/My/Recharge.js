@@ -111,7 +111,7 @@ const Recharge = () => {
                     </label> <hr />
             </div>
             <div className='text-center my-2'>
-                <button className='btn btn-purple' onClick={handleRechargeClick}>Recharge</button>
+                <button className='btn btn-orange' onClick={handleRechargeClick}>Recharge</button>
             </div>
         </div>
        
