@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../../../Comp-style/counter.css'
 
 const Counter = () => {
     const [count, setCount] = useState(0);
@@ -19,25 +20,25 @@ const Counter = () => {
             </div>
             <div className="d-flex mb-3">
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 10 ? 'selected' : ''}`}
+                    className={`btn border-bottom counthov text-dark ${multiplier === 10 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(10)}
                 >
                     10
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 100 ? 'selected' : ''}`}
+                    className={`btn border-bottom  counthov text-dark ${multiplier === 100 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(100)}
                 >
                     100
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 1000 ? 'selected' : ''}`}
+                    className={`btn border-bottom counthov text-dark ${multiplier === 1000 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(1000)}
                 >
                     1000
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 10000 ? 'selected' : ''}`}
+                    className={`btn border-bottom counthov text-dark ${multiplier === 10000 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(10000)}
                 >
                     10000

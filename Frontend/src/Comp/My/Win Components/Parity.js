@@ -14,8 +14,8 @@ const Parity = () => {
 
             </div>
             <div className="container-fluid mb-5">
-                <table className="table table-striped mb-4">
-                    <thead>
+                <table className="table table-striped mb-4 text-center">
+                    <thead >
                         <tr>
                             <th scope="col">Period</th>
                             <th scope="col">Price</th>
@@ -23,8 +23,8 @@ const Parity = () => {
                             <th scope="col">Result</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody >
+                        <tr >
                             <th scope="row">1000</th>
                             <td>2345</td>
                             <td>3</td>
@@ -59,8 +59,8 @@ const Parity = () => {
 
                     </tbody>
                 </table>
-                <nav aria-label="Page navigation example" className='align-content-end'>
-                    <ul className="pagination mb-5 ">
+                <nav aria-label="Page navigation example" className=''>
+                    <ul className="pagination mb-5">
                         <li className="page-item">
                             <Link aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>

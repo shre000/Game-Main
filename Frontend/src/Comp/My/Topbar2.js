@@ -27,10 +27,10 @@ const Topbar2 = () => {
               */}
            
             <div className="recharge text-center ">
-              <Link to={'/recharge'}><button type="button" className='btn btn-purple'> Recharge</button></Link>
+              <Link to={'/recharge'}><button type="button" className='btn btn-orange'> Recharge</button></Link>
             </div>
             <div className="withdraw text-center mt-2 ">
-              <Link to={'/withdrawl'}><button type="button" className='btn btn-purple'> <span>Withdraw</span></button></Link>
+              <Link to={'/withdrawl'}><button type="button" className='btn btn-orange'> <span>Withdraw</span></button></Link>
             </div>
           </div>
          

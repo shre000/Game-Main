@@ -21,7 +21,7 @@ const Joinblue = ({ disabled }) => {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header className='bg-primary text-light' closeButton>
+        <Modal.Header className='bg-primary text-light' >
           <Modal.Title className='fs-5 text-center'>Join blue</Modal.Title>
         </Modal.Header>
         <Modal.Body> 

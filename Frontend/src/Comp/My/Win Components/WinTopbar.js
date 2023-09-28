@@ -8,7 +8,7 @@ const WinTopbar = () => {
     <div>
     <div className="container-fluid ts py-4"> 
       <div className="row">
-        <div className="wc1">
+        <div className="wc1 col-6 text-center">
           <center><span className='text-center mt-2 '>Available Balance</span><br />
             <span><button type="" className=" btn btn-orange text-light mb-4">&#x20B9;&nbsp;643.4</button></span></center>
 
@@ -16,7 +16,7 @@ const WinTopbar = () => {
 
         </div>
       
-        <div className="wc2 ">
+        <div className="wc2 col-6">
           {/* <center className='my-4'><span className='recharge fs-5'>Recharge</span> &nbsp; &nbsp; <span className='withdraw fs-5'>Withdraw</span> </center>
             */}
           <div className="recharge text-center ">

@@ -21,17 +21,17 @@ const One = ({ disabled }) => {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header className='bg-dark text-light' closeButton>
+        <Modal.Header className=' text-light global-bg'>
           <Modal.Title className='fs-5 text-center'>Select 1</Modal.Title>
         </Modal.Header>
         <Modal.Body> 
           <Counter />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="dark" onClick={handleClose}>
+          <Button variant="orange" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="dark" onClick={handleClose}>
+          <Button variant="orange" onClick={handleClose}>
             Confirm
           </Button>
         </Modal.Footer>
