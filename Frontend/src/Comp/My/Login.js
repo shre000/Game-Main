@@ -83,10 +83,10 @@ const Login = () => {
   };
   return (
     <>
-      <div className="container py-4">
+      <div className="">
         {/* <!-- Pills navs --> */}
         <ul
-          className="nav nav-pills nav-justified mb-3"
+          className="nav  nav-justified mb-3 fs-4"
           id="ex1"
           role="tablist"
         >
@@ -175,7 +175,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="text-center mb-2">
-                <button className="btn btn-purple" onClick={loginuser}>
+                <button className="btn btn-orange" onClick={loginuser}>
                   Login
                 </button>
               </div>
