@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const Counter = () => {
     const [count, setCount] = useState(1); // Initial count value set to 1
@@ -33,19 +33,19 @@ const Counter = () => {
                     10
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 100 ? 'selected' : ''}`}
+                    className={`btn border-bottom  counthov text-dark ${multiplier === 100 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(100)}
                 >
                     100
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 1000 ? 'selected' : ''}`}
+                    className={`btn border-bottom counthov text-dark ${multiplier === 1000 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(1000)}
                 >
                     1000
                 </span>
                 <span
-                    className={`btn border-bottom text-dark ${multiplier === 10000 ? 'selected' : ''}`}
+                    className={`btn border-bottom counthov text-dark ${multiplier === 10000 ? 'selected' : ''}`}
                     onClick={() => setMultiplier(10000)}
                 >
                     10000

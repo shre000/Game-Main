@@ -209,15 +209,15 @@ const Buttonclick=async(e)=>{
 
   return (
     <>
-      <div className="container py-4">
+      <div className="">
         <ul
-          className="nav nav-pills nav-justified mb-3"
+          className="nav nav-justified mb-3"
           id="ex1"
           role="tablist"
         >
           <li className="nav-item" role="presentation">
             <p
-              className="nav-link bg-warning  bg-purple"
+              className="nav-link bg-purple fs-4"
               id="tab-login"
               data-mdb-toggle="pill"
               href="#pills-login"
@@ -359,7 +359,7 @@ const Buttonclick=async(e)=>{
               </div>
 
               {/* <!-- Submit button --> */}
-              <center> <button className="btn btn-purple  btn-block mb-5 mt-2 mx-5" onClick={Buttonclick}>Sign Up</button></center>
+              <center> <button className="btn btn-orange  btn-block mb-5 mt-2 mx-5" onClick={Buttonclick}>Sign Up</button></center>
               {/* <center> <Link to={'/login'}><button type="submit" className="btn btn-purple  btn-block mb-5 mt-2 mx-5">Sign Up</button></Link></center> */}
             </form>
           </div>

@@ -13,7 +13,7 @@ const Promotion = () => {
                     Bonus:	&#8377;0
                 </div>
                 <div>
-                    <button className='btn btn-purple my-2'>Apply to balance</button>
+                    <button className='btn btn-orange my-2'>Apply to balance</button>
                 </div>
                 <hr />
                 <div>
@@ -34,8 +34,8 @@ const Promotion = () => {
                     </div>
                     <hr />
                     <div>
-                        <button className='btn btn-purple mx-3'>Copy link</button>
-                        <button className='btn btn-purple'>Open link</button>
+                        <button className='btn btn-orange mx-3'>Copy link</button>
+                        <button className='btn btn-orange'>Open link</button>
                     </div>
                    
                 </div>

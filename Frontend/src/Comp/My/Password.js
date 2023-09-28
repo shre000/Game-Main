@@ -57,11 +57,11 @@ const Password = () => {
   };
 
   return (
-    <div className="container py-4">
-      <ul className="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+    <div className="">
+      <ul className="nav nav-justified mb-3 fs-4" id="ex1" role="tablist">
         <li className="nav-item" role="presentation">
           <p
-            className="nav-link bg-warning  bg-purple"
+            className="nav-link  bg-purple"
             id="tab-login"
             data-mdb-toggle="pill"
             href="#pills-login"
@@ -108,7 +108,7 @@ const Password = () => {
               <button
                 type="submit"
                 onClick={handleResetRequest}
-                className="btn btn-purple  btn-block mb-5 mt-2 mx-5"
+                className="btn btn-orange  btn-block mb-5 mt-2 mx-5"
               >
                 Reset Password
               </button>

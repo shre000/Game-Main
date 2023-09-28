@@ -104,7 +104,7 @@ localStorage.clear();
                     </Accordion>
 
                 </ul>
-                <center> <button type='button' onClick={logout} className='btn btn-purple'>Sign Out</button>  </center>
+                <center> <button type='button' onClick={logout} className='btn btn-orange'>Sign Out</button>  </center>
             </div>
 
 

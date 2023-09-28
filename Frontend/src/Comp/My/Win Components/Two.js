@@ -21,7 +21,7 @@ const Two = ({ disabled }) => {
             <Button data-v-3acbc54d="" disabled={disabled} onClick={handleShow} className="btn btn-danger" data-num="0">2</Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header className='bg-dark text-light' closeButton>
+                <Modal.Header className='global-bg text-light'>
                     <Modal.Title className='fs-5 text-center'>Select 2</Modal.Title>
                 </Modal.Header>
                 <Modal.Body> 
@@ -29,10 +29,10 @@ const Two = ({ disabled }) => {
 
                 </Modal.Body>
                 <Modal.Footer >
-                    <Button variant="dark" onClick={handleClose}>
+                    <Button variant="orange" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="dark" onClick={handleClose}>
+                    <Button variant="orange" onClick={handleClose}>
                         Confirm
                     </Button>
                    

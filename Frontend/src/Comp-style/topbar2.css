@@ -1,6 +1,7 @@
 .top-section{
     height: 200px;
-    background:#7e1cb8 ;
+    background: #FF4433 ;
+
     color: white;
     
 }
@@ -10,7 +11,7 @@
     width: 40%;
     height: 100px;
     background: white;
-    color:#7e1cb8;
+    color: black;
     margin: 0px 10px;
     border-radius: 2px;
     padding: 8px;
@@ -29,11 +30,13 @@
     
 }
 .recharge .btn:hover{
-    color: black;
+    color: white;
+    opacity: 0.8;
     
 
 }
 .withdraw .btn:hover{
     color: black;
+    opacity: 0.8;
    
 }

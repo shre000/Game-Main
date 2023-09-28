@@ -11,7 +11,7 @@ const Readrules = () => {
   return (
     <div>
        <div>
-            <Button className='btn btn-purple' onClick={handleShow} >
+            <Button variant='orange' onClick={handleShow} >
              Rules
             </Button>
 
@@ -21,7 +21,7 @@ const Readrules = () => {
                 </Modal.Header>
                 <Modal.Body> Demo text..........guess a number then ....</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant='orange' onClick={handleClose}>
                         Close
                     </Button>
                     

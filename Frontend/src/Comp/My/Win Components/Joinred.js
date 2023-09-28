@@ -15,13 +15,13 @@ const Joinred = ({ disabled }) =>  {
    
     return (
         <div>
-            <Button variant="success" className='btn' onClick={handleShow} disabled={disabled}>
+            <Button variant="danger" className='btn' onClick={handleShow} disabled={disabled}>
         Join Red
       </Button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header  className='bg-danger text-light'closeButton>
-                    <Modal.Title className='fs-5 text-center '>Join Red</Modal.Title>
+                <Modal.Header  className='bg-danger text-light'>
+                    <Modal.Title className='fs-5'>Join Red</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Counter/>

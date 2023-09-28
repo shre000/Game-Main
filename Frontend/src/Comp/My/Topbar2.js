@@ -12,14 +12,14 @@ const Topbar2 = () => {
         </p>
 
         <div className="row">
-          <div className="one">
+          <div className="wc1">
             <center><span className='text-center mt-2 '>Available Balance</span><br />
               <span><button type="" className=" btn bg-purple text-light mb-4">&#x20B9;&nbsp;643.4</button></span></center>
 
 
 
           </div>
-          <div className="two">
+          <div className="wc2">
             <div className='position-absolute'>
             <Bell/>
             </div>
@@ -27,10 +27,10 @@ const Topbar2 = () => {
               */}
            
             <div className="recharge text-center ">
-              <Link to={'/recharge'}><button type="button" className='btn btn-purple'> Recharge</button></Link>
+              <Link to={'/recharge'}><button type="button" className='btn btn-orange'> Recharge</button></Link>
             </div>
             <div className="withdraw text-center mt-2 ">
-              <Link to={'/withdrawl'}><button type="button" className='btn btn-purple'> <span>Withdraw</span></button></Link>
+              <Link to={'/withdrawl'}><button type="button" className='btn btn-orange'> <span>Withdraw</span></button></Link>
             </div>
           </div>
          

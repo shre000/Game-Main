@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const Records = () => {
   return (
     <div>
-        <ul className="container-fluid">
+        <ul className="container-fluid mb-4 mt-0">
                         <Accordion defaultActiveKey="0">
                             <Accordion.Item eventKey="1">
                                 <Accordion.Header> 32424 ~ Fail - 45 </Accordion.Header>

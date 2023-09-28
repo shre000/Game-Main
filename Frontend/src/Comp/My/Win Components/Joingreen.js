@@ -20,7 +20,7 @@ const Joingreen = ({ disabled }) => {
         Join Green
       </Button>
 
-      <Modal show={show} onHide={handleClose} centered> {/* Add the 'centered' prop to the Modal */}
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header className='bg-success text-light' closeButton>
           <Modal.Title className='fs-5 text-center'>Join green</Modal.Title>
         </Modal.Header>
