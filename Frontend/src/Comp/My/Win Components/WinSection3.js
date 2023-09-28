@@ -45,11 +45,16 @@ const WinSection3 = () => {
 
   return (
     <div>
-      <div className={`section-container ${disableSection ? "disabled" : ""}`}>
-        <div className="col text-end mx-3 fs-5">
-          Countdown <br /> {`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}
+      <div className={`section-container disable-bg ${disableSection ? "disabled" : ""}`}>
+        <div className="row my-2 disable-bg py-2">
+          <div className="col mx-3 fs-5">
+            Period <br /> 39293829
+          </div>
+          <div className="col text-end mx-3 fs-5">
+            Countdown <br /> {`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`}
+          </div>
         </div>
-        <div className="container py-2">
+        <div className="container-fluid py-1 ">
           <Row className="text-center">
             <Col>
               <Joingreen disabled={disableSection} />
@@ -62,7 +67,7 @@ const WinSection3 = () => {
             </Col>
           </Row>
         </div>
-        <hr />
+        <br /> <br />
         <Row className="text-lg-center text-md-start text-sm-start text-xs-start">
           <Col>
             <span>
@@ -115,8 +120,8 @@ const WinSection3 = () => {
             </span>
           </Col>
         </Row>
-
-        <hr />
+        <br />
+        
       </div>
     </div>
   );
