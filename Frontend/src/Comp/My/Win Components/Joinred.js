@@ -6,16 +6,31 @@ import Counter from './Counter';
 
 
 
-const Joinred = ({ disabled }) =>  {
+const Joinred = ({ disabled,availableBalance,setAvailableBalance,handleColorPrediction}) =>  {
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const deductFromBalance = (selectedAmount) => {
+        // Calculate the new available balance by deducting the selected amount
+        const newBalance = availableBalance - selectedAmount;
+        console.log("New balance "+newBalance);
+        setAvailableBalance(newBalance); // Update the balance in App.js
+       
+        handleClose(); // Close the modal
+        //handleNumberPrediction("0");
+        //setAvailableBalance(newBalance);
+    };
+    const buttonclick =() => {
+        handleShow();
+        handleColorPrediction("RED");
+        console.log("clicked Red")
+      }
    
     return (
         <div>
-            <Button variant="danger" className='btn' onClick={handleShow} disabled={disabled}>
+            <Button variant="danger" className='btn' onClick={buttonclick} disabled={disabled}>
         Join Red
       </Button>
 
@@ -24,14 +39,11 @@ const Joinred = ({ disabled }) =>  {
                     <Modal.Title className='fs-5'>Join Red</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Counter/>
+                <Counter onAmountSelected={deductFromBalance} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={handleClose}>
                         Close
-                    </Button>
-                    <Button variant="danger" onClick={handleClose}>
-                        Confirm
                     </Button>
                     
                 </Modal.Footer>

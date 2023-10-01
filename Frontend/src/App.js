@@ -1,5 +1,6 @@
 
 import { Routes , Route,Navigate } from 'react-router-dom';
+import React, { useState} from "react";
 import './App.css';
 // import Section1 from './Comp/Section1';
 import Home from './Comp/Home/Home';
@@ -40,8 +41,9 @@ import Wbank from './Comp/My/Wbank';
 
 
 function App () {
+  const [availableBalance, setAvailableBalance] = useState(650);
   let token = localStorage.getItem("usersdatatoken");
-    console.log(token);
+    //console.log(token);
   return (
     
     <>
@@ -57,9 +59,9 @@ function App () {
       <Route path= '/resetpassword' element ={<Password/>}></Route>
 
 
-      <Route path= '/register' element ={<Register/>}></Route>
+      <Route path= '/register' element ={<Register />}></Route>
       <Route path= '/login-dashboard' element ={<Logdash/>}></Route>
-      <Route path= '/win' element ={<Win/>}></Route>
+      <Route path= '/win' element ={<Win  availableBalance={availableBalance} setAvailableBalance={setAvailableBalance}/>}></Route>
       {/* <Route path= '/parity' element ={<P/>}></Route>
       <Route path='/spree' element={<S/>}></Route>
       <Route path='/bcone' element={<B/>}></Route>

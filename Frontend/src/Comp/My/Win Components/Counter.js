@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Button from 'react-bootstrap/Button';
 
-const Counter = () => {
+
+const Counter = ({ onAmountSelected }) =>  {
     const [count, setCount] = useState(1); // Initial count value set to 1
     const [multiplier, setMultiplier] = useState(10); // Initial multiplier set to 10
     const [totalContractMoney, setTotalContractMoney] = useState(10); // Initial total value
+
+
 
     const handleIncrement = () => {
         setCount(prevCount => prevCount + 1);
@@ -19,6 +23,16 @@ const Counter = () => {
         // Calculate and set the initial value of Total Contract Money
         setTotalContractMoney(count * multiplier);
     }, [count, multiplier]);
+
+    // Handle the user's confirmation
+    const handleConfirm = () => {
+        // Calculate the selected amount
+        const selectedAmount = totalContractMoney;
+        // Update the selectedAmount state variable
+        // Call the callback function to update the available balance
+        onAmountSelected(selectedAmount);
+      };
+      
 
     return (
         <div>
@@ -76,6 +90,10 @@ const Counter = () => {
                     </label>
                 </div>
             </div>
+            <Button variant="orange" onClick={handleConfirm}>
+                        Confirm
+                    </Button>
+                   
         </div>
     );
 }

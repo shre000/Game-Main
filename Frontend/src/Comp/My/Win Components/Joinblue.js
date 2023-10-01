@@ -4,19 +4,30 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Counter from './Counter';
 
-const Joinblue = ({ disabled }) => {
+const Joinblue = ({ disabled,availableBalance,setAvailableBalance,handleColorPrediction }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => {
-    if (!disabled) {
-      setShow(true);
-    }
-  };
+    const handleShow = () => setShow(true);
 
+    const deductFromBalance = (selectedAmount) => {
+        // Calculate the new available balance by deducting the selected amount
+        const newBalance = availableBalance - selectedAmount;
+        console.log("new balance "+newBalance);
+        setAvailableBalance(newBalance); // Update the balance in App.js
+       
+        handleClose(); // Close the modal
+        //handleNumberPrediction("0");
+        //setAvailableBalance(newBalance);
+    };
+    const buttonclick =() => {
+        handleShow();
+        handleColorPrediction("BLUE");
+        console.log("clicked BLUE")
+      }
   return (
     <div>
-      <Button variant="primary" className='btn' onClick={handleShow} disabled={disabled}>
+      <Button variant="primary" className='btn' onClick={buttonclick} disabled={disabled}>
         Join blue
       </Button>
 
@@ -25,14 +36,11 @@ const Joinblue = ({ disabled }) => {
           <Modal.Title className='fs-5 text-center'>Join blue</Modal.Title>
         </Modal.Header>
         <Modal.Body> 
-          <Counter />
+        <Counter onAmountSelected={deductFromBalance} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Confirm
           </Button>
         </Modal.Footer>
       </Modal>

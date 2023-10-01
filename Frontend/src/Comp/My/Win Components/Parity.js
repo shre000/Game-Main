@@ -1,89 +1,103 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Records from './Records'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Records from './Records';
 
-// import WinTopbar from './WinTopbar'
-// import WinSection2 from './WinSection2'
+const Parity = ({ period, randomNumber, randomColor }) => {
+  const [records, setRecords] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 10;
 
-const Parity = () => {
-    return (
-        <>
+  const generateRandomPrice = () => {
+    return Math.floor(Math.random() * (5000 - 1000 + 1) + 1000); // Generates a random price between 1000 and 5000
+  };
+  const getColorClass = (color) => {
+    if (color === 'GREEN') {
+      return 'text-success';
+    } else if (color === 'RED') {
+      return 'text-danger';
+    } else if (color === 'BLUE') {
+      return 'text-primary'; // Change 'text-primary' to the desired class for blue color
+    } else {
+      return ''; // Add a default class if none of the above colors match
+    }
+  };
+  // Simulate adding a new record when the data changes
+  useEffect(() => {
+    if (period !== null) {
+      // Create a new record object
+      const newRecord = {
+        period: period,
+        price: generateRandomPrice(), // You can replace this with actual price data
+        number: randomNumber,
+        result: (
+          <span className={`fs-3 ${randomColor === 'GREEN' ? 'text-success' : 'text-danger'}`}>
+            &#9679;
+          </span>
+        ),
+      };
 
-            <div >
-                <p className='text-center my-3'><i class="fa-solid fa-trophy " ><br /></i> Game Records</p>
+      // Add the new record to the records list
+      setRecords((prevRecords) => [newRecord, ...prevRecords]);
+    }
+  }, [period, randomNumber, randomColor]);
 
-            </div>
-            <div className="container-fluid mb-5">
-                <table className="table table-striped mb-4 text-center">
-                    <thead >
-                        <tr>
-                            <th scope="col">Period</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Number</th>
-                            <th scope="col">Result</th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                        <tr >
-                            <th scope="row">1000</th>
-                            <td>2345</td>
-                            <td>3</td>
-                            <td className='text-danger fs-3'>&#9679;</td>
+  // Paginate the records
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = records.slice(indexOfFirstRecord, indexOfLastRecord);
 
-                        </tr>
-                        <tr>
-                            <th scope="row">999</th>
-                            <td>67574</td>
-                            <td>9</td>
-                            <td className=' fs-3'><span className='text-primary'>&#9679;</span><span className='text-success'>&#9679;</span></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">998</th>
-                            <td>8565</td>
-                            <td>2</td>
-                            <td className='text-success fs-3'>&#9679;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">997</th>
-                            <td>4343</td>
-                            <td>6</td>
-                            <td className='text-danger fs-3'>&#9679;</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">996</th>
-                            <td>6508</td>
-                            <td>0</td>
-                            <td className='text-primary fs-3'>&#9679;</td>
-                        </tr>
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
+  return (
+    <>
+      <div>
+        <p className='text-center my-3'><i className="fa-solid fa-trophy"></i><br /> Game Records</p>
+      </div>
+      <div className="container-fluid mb-5">
+        <table className="table table-striped mb-4 text-center">
+          <thead>
+            <tr>
+              <th scope="col">Period</th>
+              <th scope="col">Price</th>
+              <th scope="col">Number</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentRecords.map((record, index) => (
+              <tr key={index}>
+                <th scope="row">{record.period}</th>
+                <td>{record.price}</td>
+                <td>{record.number}</td>
+                <td>
+        <span className={`fs-3 ${getColorClass(record.randomColor)}`}>
+          &#9679;
+        </span>
+      </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <nav aria-label="Page navigation example" className=''>
+          <ul className="pagination mb-5">
+            {Array.from({ length: Math.ceil(records.length / recordsPerPage) }).map((_, index) => (
+              <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
+                <Link className="page-link" onClick={() => paginate(index + 1)}>
+                  {index + 1}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="container-fluid">
+          <p className='text-center'><i className="fa-solid fa-book"></i> My Records</p>
+          <Records />
+        </div>
+      </div>
+    </>
+  );
+};
 
-                    </tbody>
-                </table>
-                <nav aria-label="Page navigation example" className=''>
-                    <ul className="pagination mb-5">
-                        <li className="page-item">
-                            <Link aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </Link> &nbsp;
-                        </li>
-                        <li className="page-item mx-2"><Link>1</Link></li>
-                        <li className="page-item mx-2"><Link>2</Link></li>
-                        <li className="page-item mx-2"><Link>3</Link></li>
-                        <li className="page-item">
-                            <Link> &nbsp;
-                                <span aria-hidden="true">&raquo;</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-                <div className="container-fluid">
-                    <p className='text-center'><i class="fa-solid fa-book "></i>My Records</p>
-                    <Records/>
-                </div>
-            </div>
-
-        </>
-    )
-}
-
-export default Parity
+export default Parity;
